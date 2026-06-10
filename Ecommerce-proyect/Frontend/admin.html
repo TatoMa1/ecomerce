@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Administración de Ropa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .form-admin { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .seccion-variantes { border: 1px solid #ddd; padding: 1rem; margin-top: 1rem; border-radius: 4px; background: #fafafa; }
+        .fila-variante { display: flex; gap: 1rem; margin-bottom: 0.5rem; }
+        .fila-variante input { flex: 1; padding: 0.5rem; }
+        .btn-secundario { background-color: #7f8c8d; margin-top: 0.5rem; width: auto; padding: 0.5rem 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Panel de Administración de Ropa</div>
+        <div><a href="index.html">Ir a la Tienda</a></div>
+    </header>
+
+    <main style="max-width: 800px;">
+        <h1>Cargar Nueva Prenda</h1>
+        
+        <form id="form-cargar-producto" class="form-admin">
+            <div class="form-grupo">
+                <label for="prod-nombre">Nombre de la Prenda</label>
+                <input type="text" id="prod-nombre" placeholder="Ej: Remera Oversize Vintage" required>
+            </div>
+            <div class="form-grupo">
+                <label for="prod-descripcion">Descripción</label>
+                <textarea id="prod-descripcion" rows="3" style="width:100%; padding:0.8rem; border:1px solid #ccc; border-radius:4px;" placeholder="Detalles de la tela, calce, etc."></textarea>
+            </div>
+            <div class="form-grupo">
+                <label for="prod-precio">Precio ($)</label>
+                <input type="number" id="prod-precio" step="0.01" placeholder="Ej: 18500.00" required>
+            </div>
+            <div class="form-grupo">
+                <label for="prod-categoria">ID Categoría</label>
+                <input type="number" id="prod-categoria" placeholder="Ej: 1 (Remeras), 2 (Pantalones)" required>
+            </div>
+            <div class="form-grupo">
+                <label for="prod-imagen">URL de la Imagen</label>
+                <input type="url" id="prod-imagen" placeholder="https://ejemplo.com/imagen.jpg">
+            </div>
+
+            <div class="seccion-variantes">
+                <h3>Stock por Talles y Colores (Variantes)</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Agrega las combinaciones de talle, color y stock disponibles para esta prenda.</p>
+                
+                <div id="contenedor-variantes-dinamicas">
+                    <div class="fila-variante">
+                        <input type="text" placeholder="Talle (Ej: M, L, 42)" required class="v-talle">
+                        <input type="text" placeholder="Color (Ej: Negro, Azul)" required class="v-color">
+                        <input type="number" placeholder="Stock" min="0" required class="v-stock">
+                    </div>
+                </div>
+                
+                <button type="button" id="btn-agregar-variante-form" class="btn-secundario">+ Añadir otra combinación</button>
+            </div>
+
+            <button type="submit" style="margin-top: 1.5rem; background-color: #27ae60;">Guardar y Publicar Prenda</button>
+        </form>
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

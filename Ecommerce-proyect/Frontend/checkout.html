@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Finalizar Compra</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><a href="index.html">Volver a la tienda</a></div>
+    </header>
+
+    <main class="contenedor-checkout">
+        <section class="resumen-orden">
+            <h2>Resumen de tu pedido</h2>
+            <div id="lista-checkout"></div>
+            <h3 class="total-final">Total a pagar: $<span id="total-checkout">0</span></h3>
+        </section>
+
+        <section class="formulario-cliente">
+            <h2>Tus Datos</h2>
+            <form id="form-checkout">
+                <div class="form-grupo">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" required>
+                </div>
+                <!-- Este botón llamará a la API para crear la preferencia de MP -->
+                <button type="submit" class="btn-pagar">Pagar con Mercado Pago</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/checkout.js"></script>
+</body>
+
+</html>
